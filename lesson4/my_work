@@ -1,0 +1,55 @@
+# Задание 1 -------------------------------------------------------------
+
+from sys import argv
+
+name, par_1, par_2, par_3 = argv
+print(int(par_1) * int(par_2) + int(par_3))
+
+# Далее в терминале ввожу команду: python .\name_file.py 160 200 1000
+
+
+
+# Задание 2 -------------------------------------------------------------
+
+my_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+my_new_list = [el for num, el in enumerate(my_list) if my_list[num - 1] < my_list[num]]
+print(f'Исходный список {my_list}')
+print(f'Новый список {my_new_list}')
+
+
+
+# Задание 3 -------------------------------------------------------------
+
+print(f'Числа от 20 до 240 кратные 20 или 21 - {[el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0]}')
+
+
+
+# Задание 4 -------------------------------------------------------------
+
+my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+my_new_list = [el for el in my_list if my_list.count(el) < 2]
+print(my_new_list)
+
+
+
+# Задание 5 -------------------------------------------------------------
+
+from functools import reduce
+
+def my_func(el_p, el):
+    return el_p * el
+
+print(f'Список четных значений: {[el for el in range(100, 1001) if el % 2 == 0]}')
+print(f'Результат перемножения всех элементов списка: {reduce(my_func, [el for el in range(99, 1001) if el % 2 == 0])}')
+
+
+
+# Задание 6 -------------------------------------------------------------
+
+from itertools import count, cycle
+
+my_count = count(7)
+my_cycle = cycle("ABC")
+
+for _ in range(5):
+    print("(my_count, my_cycle) = ({},{})".format(next(my_count), next(my_cycle)))
